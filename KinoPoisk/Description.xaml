@@ -1,0 +1,97 @@
+﻿<Window x:Class="KINOPOISK.Description"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KINOPOISK"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Icon="posters/kinopoisk-icon-main.png"
+        Title="КИНОПОИСК" Height="730" Width="1000">
+    <Window.Resources>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="Black">
+                            <Grid>
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MyButtonStyle1" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="26">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.99,0" EndPoint="1,0.85">
+                                    <GradientStop Color="#FF5500"/>
+                                    <GradientStop Color="#BBFF00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Grid>
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Black">
+        <Button Style="{StaticResource MyButtonStyle}" x:Name="backBtn" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="25 10 0 0" Click="backBtn_Click">
+            <TextBlock Text="←" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 5" Foreground="White"/>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="100"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Image Source="posters/logo.png" Height="20" Width="200" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110 25 0 0" Stretch="Fill"/>
+
+        <Border BorderThickness="1" Width="400" Height="500" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="110 70 0 0">
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                    <GradientStop Color="#FF5500"/>
+                    <GradientStop Color="#BBFF00" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Image x:Name="poster" Width="400" Height="500" Stretch="Fill"/>
+        </Border>
+
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="520 70 0 0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock x:Name="nameText" Text="" FontSize="30" Foreground="White"/>
+                <TextBlock Text="      "/>
+                <TextBlock x:Name="yearText" Text="" FontSize="30" Foreground="White"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0 25 0 0">
+                <TextBlock x:Name="genreText" Text="" FontSize="15" Foreground="White"/>
+                <TextBlock Text="      "/>
+                <TextBlock x:Name="ageText" Text="" FontSize="15" Foreground="White"/>
+            </StackPanel>
+            <TextBlock x:Name="descriptionText" Text="" TextWrapping="Wrap" Width="800" HorizontalAlignment="Left" FontSize="20" Margin="0 35 0 0" Foreground="White"/>
+        </StackPanel>
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="520 495 0 0">
+            <TextBlock Text="Продолжительность: " FontSize="15" Foreground="White"/>
+            <TextBlock x:Name="durationText" Text="" FontSize="15" Foreground="White"/>
+        </StackPanel>
+
+        <Button Style="{StaticResource MyButtonStyle1}" x:Name="watch_filmBtn" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="520 520 0 0" Width="250" Height="50" Click="watch_filmBtn_Click">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="50 0 0 0" VerticalAlignment="Center">
+                <TextBlock Text="►" FontSize="20" Foreground="White"/>
+                <TextBlock Text="Смотреть" FontSize="20" Foreground="White" Margin="15 0 0 0"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

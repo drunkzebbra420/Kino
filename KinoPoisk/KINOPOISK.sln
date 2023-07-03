@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KINOPOISK", "KINOPOISK\KINOPOISK.csproj", "{E1EB42BC-F8E6-4BAD-94B6-ED1BD5A17AAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1EB42BC-F8E6-4BAD-94B6-ED1BD5A17AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1EB42BC-F8E6-4BAD-94B6-ED1BD5A17AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1EB42BC-F8E6-4BAD-94B6-ED1BD5A17AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1EB42BC-F8E6-4BAD-94B6-ED1BD5A17AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A323A777-3AF6-4FFB-89C1-F26C6532704C}
+	EndGlobalSection
+EndGlobal

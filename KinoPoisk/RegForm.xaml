@@ -1,0 +1,130 @@
+﻿<Window x:Class="KINOPOISK.RegForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KINOPOISK"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Icon="posters/kinopoisk-icon-main.png"
+        Title="КИНОПОИСК" Height="700" Width="500">
+    <Window.Resources>
+        <Style x:Key="TextBoxStyle" BasedOn="{StaticResource {x:Type TextBox}}" TargetType="{x:Type TextBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Bd" 
+                                            BorderBrush="{TemplateBinding BorderBrush}" 
+                                            BorderThickness="{TemplateBinding BorderThickness}" 
+                                            Background="{TemplateBinding Background}" 
+
+                                            SnapsToDevicePixels="true">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="MyButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="28">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0.99,0" EndPoint="1,0.85">
+                                    <GradientStop Color="#FF5500"/>
+                                    <GradientStop Color="#BBFF00" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <Grid>
+                                <ContentPresenter/>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="PassBoxStyle" BasedOn="{StaticResource {x:Type PasswordBox}}" TargetType="{x:Type PasswordBox}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="Bd" 
+                                            BorderBrush="{TemplateBinding BorderBrush}" 
+                                            BorderThickness="{TemplateBinding BorderThickness}" 
+                                            Background="{TemplateBinding Background}" 
+
+                                            SnapsToDevicePixels="true">
+                            <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="Black">
+
+
+        <Image Source="posters/logo.png" Width="300" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="40"/>
+
+        <StackPanel Orientation="Vertical" Margin="20 90 0 0">
+            <StackPanel Orientation="Vertical" Margin="0 10 0 0">
+                <Label Content="Фамилия" FontSize="20" Foreground="White"/>
+                <Border Background="Black" BorderBrush="Orange" BorderThickness="1.6" CornerRadius="20" Width="440" Height="40" HorizontalAlignment="Left">
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="SurnameBox" Width="410" Height="35"  FontSize="24" Background="Black" Foreground="White" BorderBrush="Black"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="0 10 0 0">
+                <Label Content="Имя" FontSize="20" Foreground="White"/>
+                <Border Background="Black" BorderBrush="Orange" BorderThickness="1.6" CornerRadius="20" Width="440" Height="40" HorizontalAlignment="Left">
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="NameBox" Width="410" Height="35"  FontSize="24" Background="Black" Foreground="White" BorderBrush="Black"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="0 10 0 0">
+                <Label Content="Отчество" FontSize="20" Foreground="White"/>
+                <Border Background="Black" BorderBrush="Orange" BorderThickness="1.6" CornerRadius="20" Width="440" Height="40" HorizontalAlignment="Left">
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="PatronymicBox" Width="410" Height="35"  FontSize="24" Background="Black" Foreground="White" BorderBrush="Black"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="0 10 0 0">
+                <Label Content="Логин" FontSize="20" Foreground="White"/>
+                <Border Background="Black" BorderBrush="Orange" BorderThickness="1.6" CornerRadius="20" Width="440" Height="40" HorizontalAlignment="Left">
+                    <TextBox Style="{StaticResource TextBoxStyle}" x:Name="LoginBoxReg" Width="410" Height="35"  FontSize="24" Background="Black" Foreground="White" BorderBrush="Black"/>
+                </Border>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Margin="0 10 0 0">
+                <Label Content="Пароль" FontSize="20" Foreground="White" />
+                <Border Background="Black" BorderBrush="Orange" BorderThickness="1.6" CornerRadius="20" Width="440" Height="40" HorizontalAlignment="Left">
+                    <PasswordBox Style="{StaticResource PassBoxStyle}" x:Name="PassBoxReg" Width="410" Height="35"  FontSize="24" Background="Black" Foreground="White" BorderBrush="Black"/>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        
+        <Button Style="{StaticResource MyButtonStyle}" x:Name="REGISTBut" Width="200" Height="50" Margin="30 0 0 50 " HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="REGISTBut_Click">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Регистрация" FontSize="20" Foreground="White"/>
+        </Button>
+
+        <Button Style="{StaticResource MyButtonStyle}" x:Name="BacktoMain" Width="200" Height="50" Margin="0 0 30 50" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="BacktoMain_Click">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Назад" FontSize="20" Foreground="White"/>
+        </Button>
+
+
+
+    </Grid>
+</Window>
